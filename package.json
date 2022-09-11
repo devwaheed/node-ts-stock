@@ -36,6 +36,8 @@
   "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "fs-extra": "^10.1.0",
     "tslib": "~2.4"
   },
   "volta": {
