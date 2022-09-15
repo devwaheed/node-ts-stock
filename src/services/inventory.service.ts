@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 function getCountForTransactionType(
   transactionType: string,
   skuTransactions: Transaction[],
-) {
+): number {
   return skuTransactions
     .filter((t) => t.type === transactionType)
     .reduce((totalRefund, transaction) => {
@@ -50,7 +50,7 @@ function getSkuOrderHistory(
   return {sold, refund};
 }
 
-export async function getCurrentStockFor(sku: string){
+export async function getCurrentStockFor(sku: string): Promise<{sku: string, qty: number}>{
   const stocks = await readJsonFile<Array<Stock>>(
     path.join(__dirname, '../data/stock.json'),
   );
